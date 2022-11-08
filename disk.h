@@ -10,11 +10,13 @@ class Disk : public QObject, public QGraphicsItem
 {
     Q_OBJECT
 public:
+    static int GetWidth();
+    static void SetWidth(const int w);
+
     Disk(const int x, const int y, const QColor color);
     QRectF boundingRect() const override;
     QPainterPath shape() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *item, QWidget *widget) override;
-    static int getWidth();
 signals:
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;

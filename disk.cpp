@@ -1,6 +1,14 @@
 #include "disk.h"
 
-int Disk::width = 50;
+int Disk::width = 0;
+
+int Disk::GetWidth() {
+    return width;
+}
+
+void Disk::SetWidth(const int w) {
+    width = w;
+}
 
 Disk::Disk(const int a, const int b, const QColor c):
     x(a),
@@ -26,10 +34,6 @@ void Disk::paint(QPainter *painter, const QStyleOptionGraphicsItem *item, QWidge
     painter->setBrush(QBrush(color));
     painter->drawEllipse(boundingRect());
     painter->setBrush(brush);
-}
-
-int Disk::getWidth() {
-    return width;
 }
 
 void Disk::mousePressEvent(QGraphicsSceneMouseEvent *event) {
