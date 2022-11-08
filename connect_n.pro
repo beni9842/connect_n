@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = plotproject_starter_s20
+TARGET = connect_n
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -24,11 +24,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
+    board.cpp \
     disk.cpp \
-        main.cpp \
+    main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    board.h \
     disk.h \
     mainwindow.h
 
