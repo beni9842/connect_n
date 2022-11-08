@@ -1,6 +1,6 @@
 #include "disk.h"
 
-int width = 50;
+int Disk::width = 50;
 
 Disk::Disk(const int a, const int b, const QColor c):
     x(a),
