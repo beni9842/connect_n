@@ -24,10 +24,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
+    disk.cpp \
         main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    disk.h \
     mainwindow.h
 
 FORMS += \
