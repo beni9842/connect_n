@@ -17,6 +17,10 @@ public:
     QRectF boundingRect() const override;
     QPainterPath shape() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *item, QWidget *widget) override;
+    int getX() const;
+    int getY() const;
+    void setX(const int x);
+    void setY(const int y);
 signals:
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;

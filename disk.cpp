@@ -36,6 +36,22 @@ void Disk::paint(QPainter *painter, const QStyleOptionGraphicsItem *item, QWidge
     painter->setBrush(brush);
 }
 
+int Disk::getX() const {
+    return x;
+}
+
+int Disk::getY() const {
+    return y;
+}
+
+void Disk::setX(const int val) {
+    x = val;
+}
+
+void Disk::setY(const int val) {
+    y = val;
+}
+
 void Disk::mousePressEvent(QGraphicsSceneMouseEvent *event) {
     Q_UNUSED(event);
     qDebug() << "Click!";

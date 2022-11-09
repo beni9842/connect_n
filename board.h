@@ -28,6 +28,8 @@ public:
     bool validRow(const unsigned int row) const;
     int diskWidth() const;
 protected:
+signals:
+    void Turn();
 private slots:
     void BoardClick(const QPointF pos);
 private:

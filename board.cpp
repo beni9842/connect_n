@@ -1,4 +1,5 @@
 #include "board.h"
+#include "mainwindow.h"
 
 // PUBLIC METHODS
 Board::Board(const unsigned int x, QGraphicsView *v)
@@ -66,10 +67,10 @@ void BoardScene::mousePressEvent(QGraphicsSceneMouseEvent *event) {
 // PRIVATE SLOTS
 void Board::BoardClick(const QPointF pos) {
     const int x = pos.x();
-    const int y = pos.y();
+    //const int y = pos.y();
 
     const unsigned int col = x / diskWidth();
-    drop_disk(col, QColorConstants::Red);
+    drop_disk(col, MainWindow::getCurrentPlayer());
 }
 
 // PRIVATE METHODS
@@ -89,6 +90,7 @@ bool Board::drop_disk(const unsigned int col, const QColor color) {
             add_disk(disk);
             column.push_back(disk);
 
+            emit Turn();
             return true;
         }
     }

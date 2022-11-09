@@ -27,12 +27,15 @@ SOURCES += \
     board.cpp \
     disk.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    setupdialog.cpp
 
 HEADERS += \
     board.h \
     disk.h \
-    mainwindow.h
+    mainwindow.h \
+    setupdialog.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    setupdialog.ui
