@@ -15,6 +15,8 @@ public:
     explicit SetupDialog(QWidget *parent = nullptr);
     ~SetupDialog();
     unsigned int getN();
+signals:
+    void InitBoard(const unsigned int n);
 private slots:
     void on_submitButton_clicked();
 

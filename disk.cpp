@@ -1,6 +1,7 @@
 #include "disk.h"
 
 int Disk::width = 0;
+const Disk *Disk::NullDisk = new Disk(0, 0, QColorConstants::White);
 
 int Disk::GetWidth() {
     return width;
@@ -50,6 +51,10 @@ void Disk::setX(const int val) {
 
 void Disk::setY(const int val) {
     y = val;
+}
+
+QColor Disk::getColor() const {
+    return color;
 }
 
 void Disk::mousePressEvent(QGraphicsSceneMouseEvent *event) {

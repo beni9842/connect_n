@@ -22,14 +22,23 @@ public:
     QRectF boundingRect() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
     unsigned int getN() const;
+    void setN(const unsigned int n);
     unsigned int nCols() const;
     unsigned int nRows() const;
     bool validCol(const unsigned int col) const;
     bool validRow(const unsigned int row) const;
     int diskWidth() const;
+    bool checkForWin(const unsigned int row, const unsigned int col, const QColor color) const;
 protected:
+    void add_disk(Disk *disk);
+    bool drop_disk(const unsigned int col, const QColor color);
+    std::vector<Disk*> &get_column(const unsigned int col);
+    int get_x(const unsigned int col) const;
+    int get_y(const unsigned int row) const;
+    const Disk *getDisk(unsigned int row, unsigned int col) const;
 signals:
     void Turn();
+    void WinDetected(const QColor winner);
 private slots:
     void BoardClick(const QPointF pos);
 private:
@@ -37,12 +46,6 @@ private:
     std::vector<std::vector<Disk*>> columns;
     QGraphicsView *view;
     BoardScene *scene;
-
-    void add_disk(Disk *disk);
-    bool drop_disk(const unsigned int col, const QColor color);
-    std::vector<Disk*> &get_column(const unsigned int col);
-    int get_x(const unsigned int col) const;
-    int get_y(const unsigned int row) const;
 };
 
 #endif // BOARD_H

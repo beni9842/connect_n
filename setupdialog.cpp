@@ -19,7 +19,7 @@ unsigned int SetupDialog::getN() {
 
 void SetupDialog::on_submitButton_clicked()
 {
-    qDebug() << getN();
+    emit InitBoard(getN());
     this->close();
 }
 
